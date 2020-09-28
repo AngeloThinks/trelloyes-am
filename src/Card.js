@@ -1,7 +1,14 @@
 import React from 'react'
 
-function card(props) {
-  return (<div class="Card"> <button type="button">delete</button> <h3>Third card</h3> <p>lorem ipsum</p> </div>
-  )    
+class Card extends React.Component {
+  render(props){
+    return (<div className="Card"> <button type="button">delete</button> <h3>{props.title}</h3> <p>{props.content}</p> </div>)   
+  };
 
+};
+
+
+export default{
+  Card
 }
+
