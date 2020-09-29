@@ -1,35 +1,31 @@
-import Card from './Card.js'
-import React from 'react'
-import { render } from '@testing-library/react'
-import './List.css'
+import React from 'react';
+import Card from './Card'
+import './List.css';
 
-//The List component should render markup matching the design.html: a section with a class of 'List', containing a header and div with class 'List-cards'.
-//The List component accepts 2 props: header and cards
-
-export default function List(props){
+export default function List(props) {
   return (
     <section className='List'>
       <header className='List-header'>
-  <h2>{props.header}</h2>
+        <h2>{props.header}</h2>
       </header>
       <div className='List-cards'>
         {props.cards.map((card) =>
-          <card
+          <Card
             key={card.id}
             title={card.title}
             content={card.content}
-            />
+          />
         )}
         <button
           type='button'
           className='List-add-button'
-          >
-            + Add Random Card
-          </button>
+        >
+          + Add Random Card
+        </button>
       </div>
     </section>
   )
-}    
+} 
 
 
 
