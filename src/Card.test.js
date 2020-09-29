@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Card from "./Card";
 
 
 // this is the test case
@@ -9,12 +9,10 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
 
   // render the component, this is the actual test, if something is wrong it will fail here
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<Card />, div);
 
   
 
   // clean up code
   ReactDOM.unmountComponentAtNode(div);
 });
-
-
