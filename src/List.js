@@ -1,62 +1,37 @@
 import Card from './Card.js'
 import React from 'react'
 import { render } from '@testing-library/react'
+import './List.css'
 
 //The List component should render markup matching the design.html: a section with a class of 'List', containing a header and div with class 'List-cards'.
 //The List component accepts 2 props: header and cards
 
-class List extends React.Component{
-  render(props) {
-
- props.cards = [{title, content}]   
-    for (let i = 0; i < title.length; i++) {
-    let card = props.cards[i]
-  <Card title={cards.title} content={cards.content}/>
-
- }
-
-   const tempHeader = (
-  <header className="List-header"> 
-    <h2>{props.header}</h2> 
-  </header>)
-
-  const tempCard = (
-    <div class="List-cards"> 
-      <div class="Card"> 
-        <button type="button">delete</button> 
-        <h3>First card</h3> 
-        <p>lorem ipsum</p> 
+export default function List(props){
+  return (
+    <section className='List'>
+      <header className='List-header'>
+  <h2>{props.header}</h2>
+      </header>
+      <div className='List-cards'>
+        {props.cards.map((card) =>
+          <card
+            key={card.id}
+            title={card.title}
+            content={card.content}
+            />
+        )}
+        <button
+          type='button'
+          className='List-add-button'
+          >
+            + Add Random Card
+          </button>
       </div>
-    </div>
-  }
-
-}
-  cards = []
-
-  props.cards = []
-
+    </section>
   )
+}    
 
 
-
-
-  <section class="List"> 
-      <header class="List-header"> 
-        <h2>Third list</h2> 
-      </header> 
-            
-  </section>
-
-      return (<section className="List">
-        <div className="List-cards">
-        </div>
-        </section>);
-
-
-   }
-
-
-}
 
 
 // The List component accepts 2 props: header and cards.
